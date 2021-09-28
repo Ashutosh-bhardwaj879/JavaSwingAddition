@@ -1,7 +1,11 @@
+//using NETBEANS AND TELUSKO
 
+/https://www.youtube.com/watch?v=QLNYiW2PBGM&list=PLsyeobzWxl7pVZdyDXj0arOdTzo4MYekh&index=7
 package swingdemos;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,23 +16,32 @@ public class AddGUI {
         Addition obj = new Addition();
     }
 }
-class Addition extends JFrame
+class Addition extends JFrame implements ActionListener
 {
+    JTextField t1,t2;
+    JButton b;
+    JTextField l1;
     public Addition()
     {
-        JTextField t1 = new JTextField(10);
+        t1 = new JTextField(10);
         
-        JTextField t2 = new JTextField(10);
+        t2 = new JTextField(10);
         
         
-        JButton b = new JButton("OK");
+        b = new JButton("OK");
         
-        JLabel l1 = new JLabel("Result");
+        l1 = new JTextField("Result");
         
         add(t1);
         add(t2);
         add(b);
         add(l1);
+        
+        //action listener is an interface
+        b.addActionListener(this);
+        
+        
+        
         //layout helps in seeing Jframe 
         //default layout is Crd layout
         // import karna mat bhulnaa
@@ -38,5 +51,17 @@ class Addition extends JFrame
         //size of our app
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    
+    public void actionPerformed(ActionEvent ae)
+    {
+        //getText returns string convert   it to int using INteger .parseInt
+        int num1 = Integer.parseInt(t1.getText());
+        int num2 = Integer.parseInt(t2.getText());
+        int value = num1 + num2;
+        //set Text needs string so added "" with value
+        l1.setText(value + "");
+    
+        
     }
 }
