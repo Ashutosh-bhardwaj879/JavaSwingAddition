@@ -1,6 +1,6 @@
 //using NETBEANS AND TELUSKO
 
-/https://www.youtube.com/watch?v=QLNYiW2PBGM&list=PLsyeobzWxl7pVZdyDXj0arOdTzo4MYekh&index=7
+//https://www.youtube.com/watch?v=QLNYiW2PBGM&list=PLsyeobzWxl7pVZdyDXj0arOdTzo4MYekh&index=7
 package swingdemos;
 
 import java.awt.FlowLayout;
